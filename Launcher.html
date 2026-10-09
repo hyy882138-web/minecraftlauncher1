@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Eaglercraft Launcher</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #202020;
+    color: white;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    height: 70px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.content {
+    height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel {
+    width: 430px;
+    padding: 35px;
+    background: #303030;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px #000;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 7px;
+    background: #4caf50;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #43a047;
+}
+
+.status {
+    margin-top: 20px;
+    color: #bbb;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    Eaglercraft Launcher
+</div>
+
+<div class="content">
+    <div class="panel">
+
+        <h1>Eaglercraft 1.8.8</h1>
+
+        <p>WASM sürümü</p>
+
+        <button onclick="startGame()">OYNA</button>
+
+        <div class="status" id="status">
+            Hazır
+        </div>
+
+    </div>
+</div>
+
+<script>
+function startGame() {
+
+    const gameURL =
+        "https://eaglercraft.q13x.com/1.8.8_2/wasm/?retina=true";
+
+    document.getElementById("status").textContent =
+        "Oyun penceresi açılıyor...";
+
+    window.open(
+        gameURL,
+        "Eaglercraft",
+        "width=1280,height=720,resizable=yes"
+    );
+}
+</script>
+
+</body>
+</html>
